@@ -1,0 +1,32 @@
+﻿@model LabmasterAdminapp.Models.Przedmioty
+
+@{
+    ViewBag.Title = "Usuń przedmiot";
+}
+
+<h2>Usuń przedmiot</h2>
+
+<h3>Jesteś pewny, że chcesz usunąć ten przedmiot?</h3>
+<h4>Przedmiot ten może posiadać przypisane zajęcia.</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nazwa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazwa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Wróć do listy", "Index")
+        </div>
+    }
+</div>

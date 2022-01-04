@@ -1,0 +1,82 @@
+﻿@using LabmasterAdminapp.Models;
+@model IEnumerable<LabmasterAdminapp.Models.Obecnosci>
+
+@{
+                /**/
+
+                ViewBag.Title = "Obecnosci";
+}
+
+<h2>Obecnosci</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Obecny
+        </th>
+        <th>
+            Usprawiedliwiony
+        </th>
+        <th>
+            Student
+        </th>
+        <th>
+            Data zajęć
+        </th>
+        <th>
+            Przedmiot
+        </th>
+        <th>Akcja</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    if (item.obecnosc == false)
+                    {
+                        <p>Nie</p>
+                    }
+                    else
+                    {
+                        <p>Tak</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    if (item.usprawiedliwienie == false)
+                    {
+                        <p>Nie</p>
+                    }
+                    else
+                    {
+                        <p>Tak</p>
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studenci.imie)
+                @Html.DisplayFor(modelItem => item.Studenci.nazwisko)
+                @Html.DisplayFor(modelItem => item.Studenci.indeks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zajecia.rozpoczecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zajecia.Przedmioty.nazwa)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "ObecnosciEdit", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+@{
+    var id_zajec = Int32.Parse(Request.Url.Segments[3]);
+    PZEntities db = new PZEntities();
+    var id_przedmiotu = db.Zajecia.Find(id_zajec).id_przedmiotu.Value;
+}
+@Html.ActionLink("Wróć", "Index", new { id = id_przedmiotu})

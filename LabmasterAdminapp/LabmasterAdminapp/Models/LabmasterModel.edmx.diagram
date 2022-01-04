@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="19a8b5f571064bcc991f813afaa50dfd" Name="Diagram1">
+        <EntityTypeShape EntityType="PZModel.Grupy" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Obecnosci" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Prowadzacy" Width="1.5" PointX="1.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Przedmioty" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Sale" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Studenci" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.StudenciGrupy" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PZModel.Zajecia" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="PZModel.FK__StudenciG__id_gr__29221CFB" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Zajecia__id_grup__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Obecnosci__id_st__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Obecnosci__id_za__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Przedmiot__id_pr__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Zajecia__id_prze__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__Zajecia__id_sali__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="PZModel.FK__StudenciG__id_st__282DF8C2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

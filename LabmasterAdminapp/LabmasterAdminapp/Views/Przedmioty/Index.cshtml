@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LabmasterAdminapp.Models.Przedmioty>
+
+@{
+    ViewBag.Title = "Moje przedmioty";
+}
+
+<h2>Moje przedmioty</h2>
+
+<p>
+    @Html.ActionLink("Dodaj przedmiot", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nazwa przedmiotu
+        </th>
+        <th>
+            Akcja
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazwa)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Zajęcia", "Zajecia", new { id = item.id }) |
+            @Html.ActionLink("Obecności", "Obecnosci", new { id = item.id }) |
+            @Html.ActionLink("Usuń", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

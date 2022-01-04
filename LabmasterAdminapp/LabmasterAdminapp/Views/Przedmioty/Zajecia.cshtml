@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LabmasterAdminapp.Models.Zajecia>
+
+@{
+    ViewBag.Title = "Zajecia";
+}
+
+<h2>Zajecia</h2>
+<p>
+    @Html.ActionLink("Dodaj zajęcia", "ZajeciaCreate", new { id = @Url.RequestContext.RouteData.Values["id"] })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Rozpoczęcie
+        </th>
+        <th>
+            Zakończenie
+        </th>
+        <th>
+            Grupa
+        </th>
+        <th>
+            Przedmiot
+        </th>
+        <th>
+            Sala
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.rozpoczecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zakonczenie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupy.nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Przedmioty.nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sale.nazwa)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "ZajeciaEdit", new { id = item.id }) |
+                @Html.ActionLink("Obecności", "ZajeciaObecnosci", new { id = item.id }) |
+                @Html.ActionLink("Usuń", "ZajeciaDelete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Wróć", "Index")

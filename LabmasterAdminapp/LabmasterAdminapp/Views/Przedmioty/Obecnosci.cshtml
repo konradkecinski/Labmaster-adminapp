@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LabmasterAdminapp.Models.PrzedmiotObecnosci>
+@{
+    ViewBag.Title = "Obecnosci";
+}
+
+<h2>Obecnosci</h2>
+
+<p>
+    @Html.ActionLink("Eksportuj do XLS", "Export", new { id = @Url.RequestContext.RouteData.Values["id"] })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Indeks
+        </th>
+        <th>
+            Imie
+        </th>
+        <th>
+            Nazwisko
+        </th>
+        <th>
+            Przedmiot
+        </th>
+        <th>
+            Grupa
+        </th>
+        <th>
+            Ilość zajęć
+        </th>
+        <th>
+            Ilość obecności
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.przedmiot_nazwa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grupa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.liczba_zajec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.udzial)
+        </td>
+    </tr>
+    }
+
+</table>
+@Html.ActionLink("Wróć", "Index")
+

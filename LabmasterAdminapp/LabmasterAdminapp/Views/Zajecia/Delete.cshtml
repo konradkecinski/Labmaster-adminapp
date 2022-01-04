@@ -1,0 +1,64 @@
+﻿@model LabmasterAdminapp.Models.Zajecia
+
+@{
+    ViewBag.Title = "Usuń zajęcia";
+}
+
+<h2>Usuń zajęcia</h2>
+
+<h3>Jesteś pewny, że chcesz usunąć te zajęcia?</h3>
+<h4>Zajęcia te mogą posiadać przypisane obecności.</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Rozpoczęcie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rozpoczecie)
+        </dd>
+
+        <dt>
+            Zakończenie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zakonczenie)
+        </dd>
+
+        <dt>
+            Grupa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grupy.nazwa)
+        </dd>
+
+        <dt>
+            Przedmiot
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Przedmioty.nazwa)
+        </dd>
+
+        <dt>
+            Sala
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale.nazwa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Usuń" class="btn btn-default" /> |
+        @Html.ActionLink("Wróć", null, null, null, new { href = Request.UrlReferrer })
+    </div>
+    }
+</div>

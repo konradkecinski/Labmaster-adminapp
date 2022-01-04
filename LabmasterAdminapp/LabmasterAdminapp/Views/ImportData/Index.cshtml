@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Stwórz grupę</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <p>Wymagania dotyczące pliku wejściowego .xls lub .xlsx:</p>
+        <p></p>
+        <p></p>
+        <p>1. Nazwa arkusza - "Studenci"</p>
+        <p>2. Kolumny nazwane:</p>
+        <p>    a) indeks, imie, nazwisko</p>
+        <p>    b) indeks, imie, nazwisko, mail</p>
+        <p>3. Kolumny muszą być w podanej kolejności</p>
+        <p></p>
+        <p></p>
+    </div>
+    <div>
+
+        <input name="file" type="file" required />
+
+        <p>Nazwa grupy:</p>
+        @Html.TextBox("name")
+        <button type="submit">Import</button>
+
+
+        <div>
+            @ViewBag.Message
+        </div>
+
+    </div>
+</form>
